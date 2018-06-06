@@ -928,6 +928,16 @@ namespace Veldrid.Sdl2
             _cachedSize.Value = new Point(width, height);
         }
 
+        public void RaiseWindow()
+        {
+            SDL_RaiseWindow(_window);
+        }
+
+        public int SetWindowInputFocus()
+        {
+            return SDL_SetWindowInputFocus(_window);
+        }
+
         private IntPtr GetUnderlyingWindowHandle()
         {
             SDL_SysWMinfo wmInfo;

@@ -91,6 +91,17 @@ namespace Veldrid.Sdl2
         public static void SDL_HideWindow(SDL_Window Sdl2Window) => s_hideWindow(Sdl2Window);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void SDL_RaiseWindow_t(SDL_Window SDL2Window);
+        private static SDL_RaiseWindow_t s_raiseWindow = LoadFunction<SDL_RaiseWindow_t>("SDL_RaiseWindow");
+        public static void SDL_RaiseWindow(SDL_Window Sdl2Window) => s_raiseWindow(Sdl2Window);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate int SDL_SetWindowInputFocus_t(SDL_Window SDL2Window);
+        private static SDL_SetWindowInputFocus_t s_setWindowInputFocus = LoadFunction<SDL_SetWindowInputFocus_t>("SDL_SetWindowInputFocus");
+        public static int SDL_SetWindowInputFocus(SDL_Window Sdl2Window) => s_setWindowInputFocus(Sdl2Window);
+
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate uint SDL_GetWindowID_t(SDL_Window SDL2Window);
         private static SDL_GetWindowID_t s_getWindowID = LoadFunction<SDL_GetWindowID_t>("SDL_GetWindowID");
         public static uint SDL_GetWindowID(SDL_Window Sdl2Window) => s_getWindowID(Sdl2Window);

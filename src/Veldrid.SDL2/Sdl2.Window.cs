@@ -190,7 +190,17 @@ namespace Veldrid.Sdl2
         /// <summary>
         /// Sdl2Window should be treated as a popup menu.
         /// </summary>
-        PopupMenu = 0x00080000
+        PopupMenu = 0x00080000,
+
+        /// <summary>
+        /// Sdl2Window should is vulkan.
+        /// </summary>
+        Vulkan = 0x10000000,
+
+        /// <summary>
+        /// Sdl2Window should be created with alpha channel.
+        /// </summary>
+        Alpha     = 0x20000000
     }
 
     public enum SDL_FullscreenMode : uint
